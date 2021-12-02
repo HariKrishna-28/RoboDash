@@ -11,6 +11,7 @@ function App() {
 
   if (isLoading) return <div className="flex flex-col items-center justify-center h-screen">
     <ScaleLoader
+      color="#393e46"
     // color="rgb(38, 39, 48)"
     />
   </div>

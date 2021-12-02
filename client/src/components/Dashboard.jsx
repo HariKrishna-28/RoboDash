@@ -10,24 +10,40 @@ const Profile = () => {
     return (
         isAuthenticated && (
             <>
-                <header className="flex justify-between items-center font-semibold text-xl mx-5 mt-1">
+                <header
+                    className="flex justify-between items-center font-semibold text-xl px-5 py-3"
+                    style={{ backgroundColor: "#393e46" }}>
                     <h1 className="text-2xl">
-                        RoboDash⚡
+                        <span className="flex">
+                            RoboDash
+                            <p className="lg:hidden">
+                                ⚡
+                            </p>
+                        </span>
                     </h1>
-                    <span className="flex items-center justify-center gap-2">
+                    <span className="flex items-center align-center justify-center text-xl gap-2">
+
                         <img
+                            className="mr-2 lg:mr-0"
                             src={user.picture}
                             alt={user.nickname}
-                            width="50px"
+                            width="35px"
                             style={{ borderRadius: "50%" }} />
-                        {user.name}
+
+                        <div className="hidden lg:block">
+                            <LogoutButton />
+                        </div>
+                        {/* <p className="hidden lg:block">
+                            {user.name}
+                        </p> */}
                     </span>
                 </header>
                 <div className="flex flex-col align-center items-center justify-center">
                     <Game />
-                    <div className="mt-3">
+                    <div className="mt-3 lg:hidden">
                         <LogoutButton />
                     </div>
+
                 </div>
             </>)
     )
