@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+// import { useAuth0 } from "@auth0/auth0-react";
+
 import '../styles/GameStyles.css'
 import R1 from '../assets/R1.svg'
 import R2 from '../assets/R2.svg'
@@ -10,13 +12,13 @@ import blank from '../assets/blank.png'
 import ScoreBoard from './ScoreBoard'
 
 
-
 const width = 8
 const candyColours = [R1, R2, R3, R4, R5, R6]
 
 
 const Game = () => {
 
+    // const { user } = useAuth0();
     const [currentColour, setCurrentColour] = useState([])
     const [squareBeingDragged, setSquareBeingDragged] = useState(null)
     const [squareBeingReplaced, setSquareBeingReplaced] = useState(null)
@@ -103,7 +105,6 @@ const Game = () => {
                 let randomNumber = Math.floor(Math.random() * candyColours.length)
                 currentColour[i] = candyColours[randomNumber]
             }
-
 
             if ((currentColour[i + width]) === blank) {
                 currentColour[i + width] = currentColour[i]
@@ -194,7 +195,7 @@ const Game = () => {
 
 
     return (
-        <div className="container text-center mt-2 lg:mt-10">
+        <div className="container text-center mt-1 lg:mt-3">
             <div
                 className="flex p-3 text-center justify-center">
                 <div
@@ -208,7 +209,7 @@ const Game = () => {
                             <img
                                 key={index}
                                 src={clr}
-                                alt={clr}
+                                alt="clr"
                                 data-id={index}
                                 draggable={true}
                                 onDragStart={dragStart}
@@ -224,8 +225,17 @@ const Game = () => {
                     })}
                 </div>
             </div>
-            <ScoreBoard
-                score={score} />
+            <div className="flex align-center justify-center items-center gap-10">
+                {/* <p>
+                    <span className="flex align-center justify-center items-center">
+                        <img src={user.picture} alt={user.name} width="50px" />
+                        {user.name}
+                    </span>
+                </p> */}
+                <ScoreBoard
+                    score={score} />
+
+            </div>
         </div>
 
     )
