@@ -16,13 +16,14 @@ const width = 8
 const candyColours = [R1, R2, R3, R4, R5, R6]
 
 
-const Game = () => {
+const Game = ({ ExportScore }) => {
 
     // const { user } = useAuth0();
     const [currentColour, setCurrentColour] = useState([])
     const [squareBeingDragged, setSquareBeingDragged] = useState(null)
     const [squareBeingReplaced, setSquareBeingReplaced] = useState(null)
     const [score, setScore] = useState(0)
+    const [countDown, setCountDowm] = useState(60)
 
 
 
@@ -175,11 +176,13 @@ const Game = () => {
         setCurrentColour(randomColorArrangement)
     }
 
+    // Renders board
     useEffect(() => {
         CreateBoard()
         // console.log(currentColour)
     }, [])
 
+    // Checks for matches every 250ms
     useEffect(() => {
 
         const timer = setInterval(() => {
@@ -193,6 +196,22 @@ const Game = () => {
         return () => clearInterval(timer)
     }, [checkForColumnOfFour, checkForRowOfFour, checkForColumnOfThree, checkForRowOfThree, moveIntoSquareBelow, currentColour])
 
+
+    // timer
+    useEffect(() => {
+        if (countDown < 1) {
+            ExportScore(score)
+            console.log("Game Score", score);
+            return
+        }
+
+        const timer = setInterval(() => {
+            setCountDowm(() =>
+                countDown - 1)
+        }, 1000)
+        // if (countDown < 1)
+        return () => clearInterval(timer)
+    }, [countDown, ExportScore, score])
 
     return (
         <div className="container text-center mt-1 lg:mt-3">
@@ -234,6 +253,11 @@ const Game = () => {
                 </p> */}
                 <ScoreBoard
                     score={score} />
+
+                <div className="font-semibold">
+                    Time Left : {countDown}s
+                </div>
+
 
             </div>
         </div>

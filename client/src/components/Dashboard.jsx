@@ -1,11 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 // import JSONPretty from 'react-json-pretty';
 import Game from './Game';
 import LogoutButton from './LogoutButton';
+import { GameOverScreen } from './GameOverScreen';
+import GameCompletedAudio from "../assets/Completed.wav"
+// import GameOverAudio from "../assets/GameOver.wav"
+
 
 const Profile = () => {
     const { isAuthenticated, user } = useAuth0();
+    const [finalScore, setFinalScore] = useState(null)
+    const [showGame, setShowGame] = useState(true)
+    const SuccessAudio = new Audio(GameCompletedAudio)
+    // const FailAudio = new Audio(GameOverAudio)
+
+    // function ExportScore(score) {
+    //     setFinalScore(score)
+    //     console.log(finalScore);
+    // }
+
+    // useEffect(() => {
+    //     if (countDown < 1) return
+    //     const timer = setInterval(() => {
+    //         setCountDowm(() =>
+    //             countDown - 1)
+    //     }, 1000)
+    //     // if (countDown < 1)
+    //     return () => clearInterval(timer)
+    // }, [countDown])
+
 
     return (
         isAuthenticated && (
@@ -39,13 +63,41 @@ const Profile = () => {
                     </span>
                 </header>
                 <div className="flex flex-col align-center items-center justify-center">
-                    <Game />
-                    <div className="mt-3 lg:hidden">
-                        <LogoutButton />
-                    </div>
+                    {showGame ? (
+                        <>
+                            <Game
+                                ExportScore={(score) => {
+                                    setFinalScore(score)
+                                    console.log("Exported Score", score)
+                                    setShowGame(false)
+                                    SuccessAudio.play()
+                                }
+                                }
+                            />
+                            {/* <button
+                                className="bg-orange-700 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded align-center"
+                                style={{ width: "250px", outline: "none", border: "0" }}
+                                onClick={() => {
+                                    setShowGame(false)
+                                    FailAudio.play()
+                                }}
+                            >
+                                End Game
+                            </button> */}
+
+                            <div className="mt-3 lg:hidden">
+                                <LogoutButton />
+                            </div>
+                        </>
+                    ) :
+                        <GameOverScreen
+                            score={finalScore}
+                            AlterRender={() => setShowGame(true)} />
+                    }
 
                 </div>
-            </>)
+            </>
+        )
     )
 }
 

@@ -8,8 +8,7 @@ const LoginButton = () => {
 
     return (
         !isAuthenticated && (
-            <div className="flex flex-col items-center align-center justify-center h-screen">
-
+            <div className="flex flex-col items-center align-center justify-center h-screen gap-3">
                 <button
                     className="bg-blue-700 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded align-center"
                     style={{ width: "250px", outline: "none", border: "0" }}
