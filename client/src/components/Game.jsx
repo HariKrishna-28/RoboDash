@@ -201,7 +201,7 @@ const Game = ({ ExportScore }) => {
     useEffect(() => {
         if (countDown < 1) {
             ExportScore(score)
-            console.log("Game Score", score);
+            // console.log("Game Score", score);
             return
         }
 

@@ -68,7 +68,7 @@ const Profile = () => {
                             <Game
                                 ExportScore={(score) => {
                                     setFinalScore(score)
-                                    console.log("Exported Score", score)
+                                    // console.log("Exported Score", score)
                                     setShowGame(false)
                                     SuccessAudio.play()
                                 }
