@@ -1,5 +1,5 @@
 import React from 'react'
-
+import LogoutButton from "./LogoutButton"
 const HomeScreen = ({ RenderGame, RenderLeaderBoard }) => {
     return (
         <div className="flex flex-col items-center justify-center align-center gap-3 mt-40">
@@ -21,6 +21,10 @@ const HomeScreen = ({ RenderGame, RenderLeaderBoard }) => {
             >
                 LeaderBoards
             </button>
+
+            <div className="block mt-20 lg:hidden">
+                <LogoutButton />
+            </div>
 
         </div>
     )

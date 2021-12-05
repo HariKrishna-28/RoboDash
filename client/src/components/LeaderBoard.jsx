@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import '../styles/TableStyles.css'
 import axios from 'axios'
 import ScaleLoader from "react-spinners/ScaleLoader";
+import LogoutButton from './LogoutButton';
 const baseUrl = "https://robo-dash-28.herokuapp.com"
 // const baseUrl = "http://localhost:5000"
 
@@ -86,6 +87,10 @@ const LeaderBoard = ({ renderBoard, RenderHome }) => {
                     onClick={() => RenderHome()}>
                     Home
                 </button>
+
+                <div className="block mt-10 lg:hidden">
+                    <LogoutButton />
+                </div>
             </div>
 
         </div>
