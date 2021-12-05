@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/TableStyles.css'
 import axios from 'axios'
-const baseUrl = "hhttps://robo-dash-28.herokuapp.com"
+const baseUrl = "https://robo-dash-28.herokuapp.com"
 
 
 const LeaderBoard = ({ renderBoard, RenderHome }) => {
