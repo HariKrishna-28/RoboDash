@@ -2,9 +2,13 @@ const express = require('express')
 const cors = require('cors')
 const connectDb = require('./components/connection')
 const scoreDb = require('./components/scores')
-
 const app = express()
-app.use(cors())
+
+const baseUrl = "https://robo-dash.netlify.app"
+app.use(cors({
+    origin: baseUrl,
+    methods: ["GET", "POST"],
+}))
 app.use(express.json())
 connectDb()
 
