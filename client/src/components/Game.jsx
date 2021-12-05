@@ -10,6 +10,8 @@ import R5 from '../assets/R5.svg'
 import R6 from '../assets/R6.svg'
 import blank from '../assets/blank.png'
 import ScoreBoard from './ScoreBoard'
+// import TickSound from '../assets/timer.mp3'
+// import PointIncreaseSound from '../assets/points.mp3'
 
 
 const width = 8
@@ -24,6 +26,8 @@ const Game = ({ ExportScore }) => {
     const [squareBeingReplaced, setSquareBeingReplaced] = useState(null)
     const [score, setScore] = useState(0)
     const [countDown, setCountDowm] = useState(60)
+    // const audio = new Audio(TickSound)
+    // const pointAudio = new Audio(PointIncreaseSound)
 
 
 
@@ -205,6 +209,11 @@ const Game = ({ ExportScore }) => {
             return
         }
 
+        // if (countDown < 11) {
+        //     audio.play()
+        //     navigator.vibrate(100)
+        // }
+
         const timer = setInterval(() => {
             setCountDowm(() =>
                 countDown - 1)
@@ -212,6 +221,11 @@ const Game = ({ ExportScore }) => {
         // if (countDown < 1)
         return () => clearInterval(timer)
     }, [countDown, ExportScore, score])
+
+    // useEffect(() => {
+    //     if (countDown < 11) return
+    //     pointAudio.play()
+    // }, [score, countDown])
 
     return (
         <div className="container text-center mt-1 lg:mt-3">
