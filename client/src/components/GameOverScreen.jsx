@@ -3,6 +3,8 @@ import { useAuth0 } from "@auth0/auth0-react"
 import axios from 'axios'
 // import LeaderBoard from './LeaderBoard'
 const baseUrl = "https://robo-dash-28.herokuapp.com"
+// const baseUrl = "http://localhost:3000"
+
 
 export const GameOverScreen = ({ AlterRender, score, LeaderBoards, RenderHome }) => {
     const { user } = useAuth0()
