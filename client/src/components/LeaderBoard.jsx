@@ -38,9 +38,11 @@ const LeaderBoard = ({ renderBoard, RenderHome }) => {
             <div>
                 {leaderBoardData.length !== 0 ?
 
-                    <table className=" flex flex-col rounded-md lg:rounded-lg overflow-hidden lg:table-auto ">
+                    <table className=" flex flex-col rounded-lg lg:rounded-lg overflow-hidden lg:table-auto ">
                         <thead style={{ backgroundColor: "#393e46" }}>
-                            <tr className='bg-gray-600 text-white p-2'>
+                            <tr className='text-white p-2'
+                                style={{ backgroundColor: "#393e46" }}
+                            >
                                 <th >Position</th>
                                 <th >User</th>
                                 <th >Name</th>
@@ -72,6 +74,8 @@ const LeaderBoard = ({ renderBoard, RenderHome }) => {
                     )}
             </div>
 
+
+
             <div className="flex flex-col lg:flex-row align-center justify-center items-center gap-4 mt-3 ">
 
                 <button
@@ -92,6 +96,11 @@ const LeaderBoard = ({ renderBoard, RenderHome }) => {
                     <LogoutButton />
                 </div>
             </div>
+
+            {leaderBoardData.length === 0 ?
+                <h1 className="mt-20 mx-3 lg:mx-40 text-center lg:text-xl">As the server is hosted on a free heroku account, it enters "sleep mode" when not in use for 60 minutes.
+                    If you notice a delay please allow for a few seconds for the server to wake up.</h1>
+                : null}
 
         </div>
     )
