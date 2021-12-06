@@ -3,7 +3,7 @@ import { useAuth0 } from "@auth0/auth0-react"
 import axios from 'axios'
 // import LeaderBoard from './LeaderBoard'
 const baseUrl = "https://robo-dash-28.herokuapp.com"
-// const baseUrl = "http://localhost:3000"
+// const baseUrl = "http://localhost:5000"
 
 
 export const GameOverScreen = ({ AlterRender, score, LeaderBoards, RenderHome }) => {
@@ -11,7 +11,7 @@ export const GameOverScreen = ({ AlterRender, score, LeaderBoards, RenderHome })
 
     // eslint-disable-next-line
     async function uploadScoreToDB() {
-        const schema = {
+        const scoreSchema = {
             userImage: user.picture,
             userName: user.name,
             userScore: score
@@ -19,7 +19,7 @@ export const GameOverScreen = ({ AlterRender, score, LeaderBoards, RenderHome })
 
         try {
 
-            await axios.post(`${baseUrl}/userScores`, schema)
+            await axios.post(`${baseUrl}/userScores`, scoreSchema)
             // console.log("sent to backend")
         } catch (Err) {
             console.log(Err.message)
@@ -46,7 +46,7 @@ export const GameOverScreen = ({ AlterRender, score, LeaderBoards, RenderHome })
                 style={{ width: "250px", outline: "none", border: "0" }}
                 onClick={() => LeaderBoards()}
             >
-                LeaderBards
+                LeaderBard
             </button>
 
             <button

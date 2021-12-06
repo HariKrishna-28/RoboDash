@@ -10,7 +10,22 @@ const LoginButton = () => {
         !isAuthenticated && (
             <div className="flex flex-col items-center align-center justify-center h-screen gap-3">
 
-                <h1>Welcome to RoboDash</h1>
+                <h1 className="flex text-2xl justify-center align-center mb-2">Welcome to
+                    <span className="flex">
+                        RoboDash
+                        <span className="lg:hidden">
+                            ⚡
+                        </span>
+                    </span>
+                </h1>
+                {/* <h1 className="flex text-center text-xl mb-2">Login to continue to
+                    <span className="flex">
+                         RoboDash
+                        <span className="lg:hidden">
+                            ⚡
+                        </span>
+                    </span>
+                </h1> */}
                 <button
                     className="bg-blue-700 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded align-center"
                     style={{ width: "250px", outline: "none", border: "0" }}

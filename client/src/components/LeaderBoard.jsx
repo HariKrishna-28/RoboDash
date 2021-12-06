@@ -24,12 +24,13 @@ const LeaderBoard = ({ renderBoard, RenderHome }) => {
 
 
         <div
-            className="mt-20"
+            className="mt-12 lg:mt-8"
 
 
         //  className="flex flex-col items-center justify-center h-screen gap-2"
         >
 
+            <p className="text-center mb-4 text-2xl lg:mb-10">Top players</p>
             {/* <div id="check">
                 vvaka
             </div> */}
@@ -43,10 +44,17 @@ const LeaderBoard = ({ renderBoard, RenderHome }) => {
                             <tr className='text-white p-2'
                                 style={{ backgroundColor: "#393e46" }}
                             >
-                                <th >Position</th>
-                                <th >User</th>
-                                <th >Name</th>
-                                <th >Score</th>
+                                <th
+                                    id="position"
+                                >Position</th>
+                                <th
+                                    id="image"
+                                >User</th>
+                                <th
+                                    id="name"
+                                >Name</th>
+                                <th
+                                    id="score" >Score</th>
                             </tr>
                         </thead>
 
@@ -56,10 +64,14 @@ const LeaderBoard = ({ renderBoard, RenderHome }) => {
                                     <tr
                                         key={index}
                                         className="bg-white text-black">
-                                        <td>{parseInt(index) + 1}</td>
-                                        <td className="flex align-center justify-center"><img src={scoreInfo.UserImage} alt="data" /></td>
-                                        <td>{scoreInfo.UserName}</td>
-                                        <td>{scoreInfo.UserScore}</td>
+                                        <td id="position">{parseInt(index) + 1}</td>
+                                        <td id="image" className="flex align-center justify-center">
+                                            <img src={scoreInfo.UserImage}
+                                                alt="data"
+                                                draggable={false} />
+                                        </td>
+                                        <td id="name">{scoreInfo.UserName}</td>
+                                        <td id="score">{scoreInfo.UserScore}</td>
                                     </tr>
                                 </tbody>
                             )
@@ -76,7 +88,7 @@ const LeaderBoard = ({ renderBoard, RenderHome }) => {
 
 
 
-            <div className="flex flex-col lg:flex-row align-center justify-center items-center gap-4 mt-3 ">
+            <div className="flex flex-col lg:flex-row align-center justify-center items-center gap-4 mt-4 ">
 
                 <button
                     className="bg-orange-700 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded align-center"

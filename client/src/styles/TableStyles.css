@@ -2,8 +2,8 @@
 @media only screen and (max-width: 600px) {
   table {
     /* width: fit-content; */
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
 
   table {
@@ -15,6 +15,21 @@
     text-align: center;
     width: 100px;
     padding: 3px;
+  }
+
+  #image {
+    width: 63px;
+  }
+
+  #name {
+    width: 140px;
+  }
+
+  #score {
+    width: 70px;
+  }
+  #position {
+    width: 80px;
   }
 
   td img {
