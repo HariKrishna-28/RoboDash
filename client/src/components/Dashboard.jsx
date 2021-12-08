@@ -7,6 +7,7 @@ import { GameOverScreen } from './GameOverScreen';
 import GameCompletedAudio from "../assets/Completed.wav"
 import LeaderBoard from "../components/LeaderBoard"
 import HomeScreen from "../components/HomeScreen"
+import RoboLogo from "../assets/R2.svg"
 // import GameOverAudio from "../assets/GameOver.wav"
 
 
@@ -56,11 +57,18 @@ const Profile = () => {
                     className="flex justify-between items-center font-semibold text-xl px-5 py-3"
                     style={{ backgroundColor: "#393e46" }}>
                     <h1 className="text-2xl">
-                        <span className="flex">
+                        <span className="flex font-bold items-center">
                             RoboDash
                             <p className="lg:hidden">
                                 ⚡
                             </p>
+                            <img
+                                className="hidden lg:block"
+                                src={RoboLogo}
+                                alt="logo"
+                                width="40px"
+
+                            />
                         </span>
                     </h1>
                     <span className="flex items-center align-center justify-center text-xl gap-2">

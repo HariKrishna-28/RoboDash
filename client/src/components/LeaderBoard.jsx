@@ -30,7 +30,7 @@ const LeaderBoard = ({ renderBoard, RenderHome }) => {
         //  className="flex flex-col items-center justify-center h-screen gap-2"
         >
 
-            <p className="text-center mb-4 text-2xl lg:mb-10">Top players</p>
+            <p className="text-center font-semibold mb-4 text-2xl lg:mb-10">Top players</p>
             {/* <div id="check">
                 vvaka
             </div> */}
@@ -111,7 +111,7 @@ const LeaderBoard = ({ renderBoard, RenderHome }) => {
 
             {leaderBoardData.length === 0 ?
                 <h1 className="mt-20 mx-3 lg:mx-40 text-center lg:text-xl">As the server is hosted on a free heroku account, it enters "sleep mode" when not in use for 60 minutes.
-                    If you notice a delay please allow for a few seconds for the server to wake up.</h1>
+                    If you notice a delay please allow a few seconds for the server to wake up.</h1>
                 : null}
 
         </div>

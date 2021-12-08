@@ -10,11 +10,14 @@ const LoginButton = () => {
         !isAuthenticated && (
             <div className="flex flex-col items-center align-center justify-center h-screen gap-3">
 
-                <h1 className="flex text-2xl justify-center align-center mb-2">Welcome to
+                <h1 className="flex text-2xl justify-center align-center mb-2 font-semibold">Welcome to
                     <span className="flex">
                         RoboDash
                         <span className="lg:hidden">
                             ⚡
+                        </span>
+                        <span className="hidden lg:block">
+                            !
                         </span>
                     </span>
                 </h1>
