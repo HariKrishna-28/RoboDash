@@ -63,7 +63,7 @@ const LeaderBoard = ({ renderBoard, RenderHome }) => {
                                 <tbody>
                                     <tr
                                         key={index}
-                                        className="bg-white text-black">
+                                        className={index % 2 === 0 ? "bg-white text-black" : "bg-gray-300 text-black"}>
                                         <td id="position">{parseInt(index) + 1}</td>
                                         <td id="image" className="flex align-center justify-center">
                                             <img src={scoreInfo.UserImage}
