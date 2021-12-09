@@ -36,19 +36,16 @@ const Profile = () => {
     //     return () => clearInterval(timer)
     // }, [countDown])
 
-    function GameDisplay() {
+    function displayGame() {
         setShowGame(true)
         setShowLeaderBoard(false)
     }
 
-    function LeaderBoardDisplay() {
+    function displayLeaderBoard() {
         setShowLeaderBoard(true)
         setShowGame(false)
     }
 
-    // function HomeScreenDisplay(){
-
-    // }
 
     return (
         isAuthenticated && (
@@ -93,26 +90,20 @@ const Profile = () => {
                         <HomeScreen
                             RenderGame={() => {
                                 setShowHomeScreen(false)
-                                // setShowGame(true)
-                                // setShowLeaderBoard(false)
-                                GameDisplay()
+                                displayGame()
                             }}
 
                             RenderLeaderBoard={() => {
                                 setShowHomeScreen(false)
-                                LeaderBoardDisplay()
-                                // setShowLeaderBoard(true)
-                                // setShowGame(false)
+                                displayLeaderBoard()
                             }}
                         />
 
                     ) : showGame && !showLeaderBoard ? (
                         <>
-                            {/* {console.log(showGame,"showgame")} */}
                             <Game
                                 ExportScore={(score) => {
                                     setFinalScore(score)
-                                    // console.log("Exported Score", score)
                                     setShowGame(false)
                                     SuccessAudio.play()
                                 }
@@ -126,9 +117,7 @@ const Profile = () => {
                                     style={{ width: "200px", outline: "none", border: "0" }}
                                     onClick={() => {
                                         setShowHomeScreen(true)
-                                        GameDisplay()
-                                        // setShowLeaderBoard(true)
-                                        // setShowGame(false)
+                                        displayGame()
                                     }}>
                                     Leave Game
                                 </button>
@@ -137,9 +126,7 @@ const Profile = () => {
                                     className="bg-orange-700 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded align-center"
                                     style={{ width: "200px", outline: "none", border: "0" }}
                                     onClick={() => {
-                                        LeaderBoardDisplay()
-                                        // setShowLeaderBoard(true)
-                                        // setShowGame(false)
+                                        displayLeaderBoard()
                                     }}>
                                     ShowLeaderboard
                                 </button>
@@ -157,13 +144,11 @@ const Profile = () => {
 
                             <LeaderBoard
                                 renderBoard={() => {
-                                    GameDisplay()
-                                    // setShowGame(true)
-                                    // setShowLeaderBoard(false)
+                                    displayGame()
                                 }}
                                 RenderHome={() => {
                                     setShowHomeScreen(true)
-                                    GameDisplay()
+                                    displayGame()
                                 }}
                             />
 
@@ -174,19 +159,15 @@ const Profile = () => {
                             <GameOverScreen
                                 score={finalScore}
                                 AlterRender={() => {
-                                    GameDisplay()
-                                    // setShowGame(true)
-                                    // setShowLeaderBoard(false)
+                                    displayGame()
                                 }}
                                 LeaderBoards={() => {
-                                    LeaderBoardDisplay()
-                                    // setShowLeaderBoard(true)
-                                    // setShowGame(false)
+                                    displayLeaderBoard()
                                 }}
 
                                 RenderHome={() => {
                                     setShowHomeScreen(true)
-                                    GameDisplay()
+                                    displayGame()
                                 }}
                             />
                         </>

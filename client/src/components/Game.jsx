@@ -209,23 +209,16 @@ const Game = ({ ExportScore }) => {
             return
         }
 
-        // if (countDown < 11) {
-        //     audio.play()
-        //     navigator.vibrate(100)
-        // }
 
         const timer = setInterval(() => {
             setCountDowm(() =>
                 countDown - 1)
         }, 1000)
-        // if (countDown < 1)
+
         return () => clearInterval(timer)
     }, [countDown, ExportScore, score])
 
-    // useEffect(() => {
-    //     if (countDown < 11) return
-    //     pointAudio.play()
-    // }, [score, countDown])
+
 
     return (
         <div className="container text-center mt-1 lg:mt-3">

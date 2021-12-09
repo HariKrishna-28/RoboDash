@@ -9,10 +9,6 @@ const app = express()
 
 app.use(cors())
 
-// app.use(cors({
-//     origin: baseUrl,
-//     methods: ["GET", "POST"],
-// }))
 
 app.use(express.json())
 connectDb()

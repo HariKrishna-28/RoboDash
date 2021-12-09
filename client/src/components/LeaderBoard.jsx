@@ -30,12 +30,8 @@ const LeaderBoard = ({ renderBoard, RenderHome }) => {
         //  className="flex flex-col items-center justify-center h-screen gap-2"
         >
 
-            <p className="text-center font-semibold mb-4 text-2xl lg:mb-10">Top players</p>
-            {/* <div id="check">
-                vvaka
-            </div> */}
-            {/* <h1 className="text-center">LeaderBoard</h1>
-             */}
+            <p className="text-center font-semibold mb-4 text-2xl lg:mb-10">Top Players</p>
+
             <div>
                 {leaderBoardData.length !== 0 ?
 

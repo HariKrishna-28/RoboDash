@@ -20,7 +20,7 @@ export const GameOverScreen = ({ AlterRender, score, LeaderBoards, RenderHome })
         try {
 
             await axios.post(`${baseUrl}/userScores`, scoreSchema)
-            // console.log("sent to backend")
+            console.log("Updated the scores to the database")
         } catch (Err) {
             console.log(Err.message)
         }
