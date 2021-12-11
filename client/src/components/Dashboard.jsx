@@ -53,8 +53,15 @@ const Profile = () => {
                 <header
                     className="flex justify-between items-center font-semibold text-xl px-5 py-3"
                     style={{ backgroundColor: "#393e46" }}>
-                    <h1 className="text-2xl">
-                        <span className="flex font-bold items-center">
+                    <h1
+                        className="text-2xl cursor-pointer"
+                        onClick={() => {
+                            setShowHomeScreen(true)
+                            // console.log("hi")
+                        }}
+                    >
+                        <span className="flex font-bold items-center"
+                        >
                             RoboDash
                             <p className="lg:hidden">
                                 ⚡
@@ -173,8 +180,8 @@ const Profile = () => {
                         </>
                     ) : null}
 
-
                 </div>
+
             </>
         )
     )

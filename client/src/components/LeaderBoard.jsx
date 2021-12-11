@@ -3,6 +3,7 @@ import '../styles/TableStyles.css'
 import axios from 'axios'
 import ScaleLoader from "react-spinners/ScaleLoader";
 import LogoutButton from './LogoutButton';
+// import { useAuth0 } from "@auth0/auth0-react"
 const baseUrl = "https://robo-dash-28.herokuapp.com"
 // const baseUrl = "http://localhost:5000"
 
@@ -10,12 +11,14 @@ const baseUrl = "https://robo-dash-28.herokuapp.com"
 
 const LeaderBoard = ({ renderBoard, RenderHome }) => {
     const [leaderBoardData, SetLeaderBoardData] = useState([])
+    // const { user } = useAuth0();
 
     useEffect(() => {
         axios.get(`${baseUrl}/ScorBoard`)
             .then((response) => {
                 SetLeaderBoardData(response.data)
                 // console.log(leaderBoardData)
+
             })
     }, [])
 
@@ -55,18 +58,23 @@ const LeaderBoard = ({ renderBoard, RenderHome }) => {
                         </thead>
 
                         {leaderBoardData.map((scoreInfo, index) => {
+
                             return (
                                 <tbody>
                                     <tr
                                         key={index}
                                         className={index % 2 === 0 ? "bg-white text-black" : "bg-gray-300 text-black"}>
                                         <td id="position">{parseInt(index) + 1}</td>
-                                        <td id="image" className="flex align-center justify-center">
+                                        <td id="image" className="flex align-center items-center justify-center">
                                             <img src={scoreInfo.UserImage}
                                                 alt="data"
                                                 draggable={false} />
                                         </td>
-                                        <td id="name">{scoreInfo.UserName}</td>
+                                        <td id="name"
+                                        // className={scoreInfo.UserName === user.name ? "text-red-700" : null}
+                                        >
+                                            {scoreInfo.UserName}
+                                        </td>
                                         <td id="score">{scoreInfo.UserScore}</td>
                                     </tr>
                                 </tbody>
