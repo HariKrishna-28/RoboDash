@@ -41,19 +41,20 @@ app.post("/userScores", async (req, res) => {
     }
 })
 
-app.get("/ScorBoard", (req, res) => {
+app.get("/ScoreBoard", (req, res) => {
+
     scoreDb.find({}, (error, result) => {
         if (error) {
             res.send(error.message)
         }
 
-        const refinedScores = result.sort(function (a, b) {
-            return parseInt(a.UserScore) - parseInt(b.UserScore)
+        const topScores = result.sort((a, b) => {
+            return parseInt(b.UserScore) - parseInt(a.UserScore)
         })
 
-        // console.log(refinedScores)
+        console.log(topScores)
         // console.log(result)
-        res.send(refinedScores.reverse().slice(0, 10))
+        res.send(topScores.slice(0, 10))
     })
 })
 

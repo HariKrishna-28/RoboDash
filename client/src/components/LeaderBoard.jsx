@@ -14,7 +14,7 @@ const LeaderBoard = ({ renderBoard, RenderHome }) => {
     // const { user } = useAuth0();
 
     useEffect(() => {
-        axios.get(`${baseUrl}/ScorBoard`)
+        axios.get(`${baseUrl}/ScoreBoard`)
             .then((response) => {
                 SetLeaderBoardData(response.data)
                 // console.log(leaderBoardData)
@@ -108,7 +108,7 @@ const LeaderBoard = ({ renderBoard, RenderHome }) => {
                     Home
                 </button>
 
-                <div className="block mt-10 lg:hidden">
+                <div className="mt-10 lg:hidden">
                     <LogoutButton />
                 </div>
             </div>
