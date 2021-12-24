@@ -14,7 +14,8 @@ const MessageSchema = new mongoose.Schema({
 
     UserScore: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     }
 
 })
