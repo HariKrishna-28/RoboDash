@@ -8,9 +8,9 @@ const app = express()
 // const baseUrl = "http://localhost:3000"
 
 app.use(cors())
-
-
 app.use(express.json())
+
+// connects to the database
 connectDb()
 
 
@@ -52,7 +52,7 @@ app.get("/ScoreBoard", (req, res) => {
             return parseInt(b.UserScore) - parseInt(a.UserScore)
         })
 
-        console.log(topScores)
+        // console.log(topScores)
         // console.log(result)
         res.send(topScores.slice(0, 10))
     })

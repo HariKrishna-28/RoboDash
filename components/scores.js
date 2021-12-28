@@ -16,9 +16,9 @@ const MessageSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true
-    }
+    },
 
-})
+}, { timestamps: true })
 
 const ScoreEntry = mongoose.model("UserScoreEntries", MessageSchema)
 

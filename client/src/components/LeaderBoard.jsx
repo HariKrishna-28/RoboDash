@@ -29,7 +29,6 @@ const LeaderBoard = ({ renderBoard, RenderHome }) => {
         <div
             className="mt-12 lg:mt-8"
 
-
         //  className="flex flex-col items-center justify-center h-screen gap-2"
         >
 
