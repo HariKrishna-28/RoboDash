@@ -46,7 +46,7 @@ export const GameOverScreen = ({ AlterRender, score, LeaderBoards, RenderHome })
                 style={{ width: "250px", outline: "none", border: "0" }}
                 onClick={() => LeaderBoards()}
             >
-                LeaderBard
+                LeaderBoard
             </button>
 
             <button
