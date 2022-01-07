@@ -91,7 +91,7 @@ const LeaderBoard = ({ renderBoard, RenderHome }) => {
 
 
 
-            <div className="flex flex-col lg:flex-row align-center justify-center items-center gap-4 mt-4 ">
+            <div className="flex flex-col lg:flex-row align-center justify-center items-center gap-4 mt-4 mb-8">
 
                 <button
                     className="bg-orange-700 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded align-center"
@@ -107,7 +107,7 @@ const LeaderBoard = ({ renderBoard, RenderHome }) => {
                     Home
                 </button>
 
-                <div className="mt-10 lg:hidden">
+                <div className="mt-8 lg:hidden">
                     <LogoutButton />
                 </div>
             </div>

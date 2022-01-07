@@ -244,7 +244,7 @@ const Game = ({ ExportScore }) => {
                                 onDragLeave={(e) => e.preventDefault()}
                                 onDrop={dragDrop}
                                 onDragEnd={dragEnd}
-
+                                style={{ cursor: "pointer" }}
                             />
 
                         )

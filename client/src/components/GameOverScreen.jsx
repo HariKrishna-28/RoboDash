@@ -5,12 +5,12 @@ import axios from 'axios'
 const baseUrl = "https://robo-dash-28.herokuapp.com"
 // const baseUrl = "http://localhost:5000"
 
-
 export const GameOverScreen = ({ AlterRender, score, LeaderBoards, RenderHome }) => {
     const { user } = useAuth0()
 
     // eslint-disable-next-line
     async function uploadScoreToDB() {
+
         const scoreSchema = {
             userImage: user.picture,
             userName: user.name,
@@ -18,7 +18,6 @@ export const GameOverScreen = ({ AlterRender, score, LeaderBoards, RenderHome })
         }
 
         try {
-
             await axios.post(`${baseUrl}/userScores`, scoreSchema)
             console.log("Updated the scores to the database")
         } catch (Err) {

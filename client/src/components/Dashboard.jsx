@@ -55,10 +55,7 @@ const Profile = () => {
                     style={{ backgroundColor: "#393e46" }}>
                     <h1
                         className="text-2xl cursor-pointer"
-                        onClick={() => {
-                            setShowHomeScreen(true)
-                            // console.log("hi")
-                        }}
+                        onClick={() => setShowHomeScreen(true)}
                     >
                         <span className="flex font-bold items-center"
                         >
@@ -69,6 +66,7 @@ const Profile = () => {
                             <img
                                 className="hidden lg:block"
                                 src={RoboLogo}
+                                draggable={false}
                                 alt="logo"
                                 width="40px"
 
@@ -81,6 +79,7 @@ const Profile = () => {
                             className="mr-2 lg:mr-0"
                             src={user.picture}
                             alt={user.nickname}
+                            draggable={false}
                             width="35px"
                             style={{ borderRadius: "50%" }} />
 

@@ -35,7 +35,7 @@ const LoginButton = () => {
                     onClick={() => loginWithRedirect()}>
 
                     <span className="flex align-center items-center justify-center gap-2">
-                        <img src={Logo} alt="google" width="30px" style={{ borderRadius: "50%", }} />
+                        <img src={Logo} alt="google" width="30px" draggable={false} style={{ borderRadius: "50%", }} />
                         Log In With Google
                     </span>
 
