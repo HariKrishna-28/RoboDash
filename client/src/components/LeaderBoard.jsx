@@ -4,7 +4,7 @@ import axios from 'axios'
 import ScaleLoader from "react-spinners/ScaleLoader";
 import LogoutButton from './LogoutButton';
 // import { useAuth0 } from "@auth0/auth0-react"
-const baseUrl = "https://robo-dash-28.herokuapp.com"
+const baseUrl = "https://robo-dash.onrender.com"
 // const baseUrl = "http://localhost:5000"
 
 

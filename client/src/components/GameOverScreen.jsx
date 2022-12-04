@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useAuth0 } from "@auth0/auth0-react"
 import axios from 'axios'
 // import LeaderBoard from './LeaderBoard'
-const baseUrl = "https://robo-dash-28.herokuapp.com"
+const baseUrl = "https://robo-dash.onrender.com"
 // const baseUrl = "http://localhost:5000"
 
 export const GameOverScreen = ({ AlterRender, score, LeaderBoards, RenderHome }) => {
